@@ -1,0 +1,6 @@
+isUseWhiteList: true
+WhiteList:
+  - "example-uuid"
+charset: "UTF-8"
+isAllowConsole: true
+TimeOut: 10

@@ -1,0 +1,14 @@
+name: terminal
+version: '${project.version}'
+main: dev.omochi.terminal.Terminal
+api-version: 1.18
+commands:
+  terminal:
+    description: シュルコマンドを実行.
+    aliases: [sh,shell]
+    permission: terminal.use
+    usage: /sh command
+permissions:
+  terminal.use:
+    description: terminalを実行する権限
+    default: op
