@@ -1,5 +1,6 @@
 package dev.omochi.terminal;
 
+import jdk.tools.jlink.plugin.Plugin;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -15,8 +16,14 @@ public final class Terminal extends JavaPlugin {
     public static List<String> WhiteList;
     public static long TimeOut;
     public static List<FutureAndMoreContain> FutureAndMoreContainList;
+
+    public static PlatformUtils platformUtils;
+
+    public static boolean isOptimizationCommand;
+    public static Terminal plugin;
     @Override
     public void onEnable() {
+        plugin= this;
 
         this.getConfig().options().copyDefaults(true);
         saveConfig();
@@ -36,9 +43,13 @@ public final class Terminal extends JavaPlugin {
 
         TimeOut =config.getLong("TimeOut");
 
+        isOptimizationCommand=config.getBoolean("isOptimizationCommand");
+
         FutureAndMoreContainList =new ArrayList<>();
 
         //
+        platformUtils=new PlatformUtils();
+
 
         new ReturnCheck().runTaskTimer(this, 0L, 20L);
     }

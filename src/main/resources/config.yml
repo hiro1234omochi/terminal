@@ -4,3 +4,4 @@ WhiteList:
 charset: "UTF-8"
 isAllowConsole: true
 TimeOut: 10
+isOptimizationCommand: true
